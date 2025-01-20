@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Quiz App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        header, footer { background: #f0f0f0; padding: 10px; }
+        .score { float: right; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Quiz App</h1>
+    {% if best_score is not none %}
+    <div class="score">Best Score: {{ best_score }}</div>
+    {% endif %}
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <p>Developed by Sevcan Uçan</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome</h2>
+{% if username %}
+    <p>Hello, {{ username }}! Ready to start the quiz?</p>
+    <a href="{{ url_for('quiz') }}">Start Quiz</a>
+{% else %}
+    <form action="{{ url_for('set_name') }}" method="POST">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Submit</button>
+    </form>
+{% endif %}
+{% endblock %}
